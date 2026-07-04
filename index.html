@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nexaura - Study Buddy</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f6ff;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 60%;
+      margin: auto;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    }
+
+    input {
+      width: 80%;
+      padding: 12px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      background: #4a6cf7;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .output {
+      margin-top: 20px;
+      text-align: left;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>🌐 Nexaura</h1>
+    <h3>AI Study Buddy</h3>
+
+    <input type="text" id="topic" placeholder="Enter your topic...">
+    <br>
+    <button onclick="explainTopic()">Explain</button>
+
+    <div class="output" id="output"></div>
+  </div>
+
+  <script>
+    function explainTopic() {
+      let topic = document.getElementById("topic").value;
+      let output = document.getElementById("output");
+
+      if (topic === "") {
+        output.innerText = "Please enter a topic first.";
+        return;
+      }
+
+      output.innerText =
+`📌 Topic: ${topic}
+
+🧠 Introduction:
+${topic} is an important concept that students need to understand for better learning.
+
+📖 Explanation:
+This topic explains the core ideas of ${topic} in a simple and structured way. It helps in building strong understanding step by step.
+
+💡 Example:
+A real-life example of ${topic} can help students connect theory with practice.
+
+📝 Summary:
+${topic} is important for exams and concept building.`;
+    }
+  </script>
+
+</body>
+</html>
