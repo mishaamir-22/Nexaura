@@ -1,91 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Nexaura - Study Buddy</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #f4f6ff;
-      text-align: center;
-      padding: 50px;
-    }
+function explainTopic() {
+  let topic = document.getElementById("topic").value;
+  let output = document.getElementById("output");
 
-    .container {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      width: 60%;
-      margin: auto;
-      box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
-    }
+  if (topic === "") {
+    output.innerText = "Please enter a topic first.";
+    return;
+  }
 
-    input {
-      width: 80%;
-      padding: 12px;
-      margin-top: 20px;
-    }
-
-    button {
-      padding: 10px 20px;
-      margin-top: 15px;
-      background: #4a6cf7;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 6px;
-    }
-
-    .output {
-      margin-top: 20px;
-      text-align: left;
-      background: #f9f9f9;
-      padding: 15px;
-      border-radius: 8px;
-      white-space: pre-line;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="container">
-    <h1>🌐 Nexaura</h1>
-    <h3>AI Study Buddy</h3>
-
-    <input type="text" id="topic" placeholder="Enter your topic...">
-    <br>
-    <button onclick="explainTopic()">Explain</button>
-
-    <div class="output" id="output"></div>
-  </div>
-
-  <script>
-    function explainTopic() {
-      let topic = document.getElementById("topic").value;
-      let output = document.getElementById("output");
-
-      if (topic === "") {
-        output.innerText = "Please enter a topic first.";
-        return;
-      }
-
-      output.innerText =
+  output.innerText =
 `📌 Topic: ${topic}
 
-🧠 Introduction:
-${topic} is an important concept that students need to understand for better learning.
+🧠 1. Introduction:
+${topic} is a concept that helps students understand the basic idea behind it in a simple way.
 
-📖 Explanation:
-This topic explains the core ideas of ${topic} in a simple and structured way. It helps in building strong understanding step by step.
+📖 2. Detailed Explanation:
+${topic} is explained step by step so students can easily understand how it works and why it is important in real life and exams.
 
-💡 Example:
-A real-life example of ${topic} can help students connect theory with practice.
+💡 3. Example:
+A real-life example of ${topic} helps connect theory with practical understanding.
 
-📝 Summary:
-${topic} is important for exams and concept building.`;
-    }
-  </script>
+⚙️ 4. Key Points:
+- Important concept of ${topic}
+- Used in studies and exams
+- Helps in building strong understanding
 
-</body>
-</html>
+📝 5. Summary:
+${topic} is an important topic for learning and exam preparation.`;
+}
